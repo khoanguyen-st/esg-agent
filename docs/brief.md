@@ -1,337 +1,379 @@
-# Project Brief: ESG AI Agent Chatbot
+# Tóm Tắt Dự Án: Chatbot AI Agent ESG
 
-## Executive Summary
+## Tóm Tắt Tổng Quan
 
-The ESG AI Agent Chatbot is an AI-powered plugin for the Amigo energy management platform that automatically generates comprehensive, standards-compliant ESG (Environmental, Social, Governance) reports. By combining real-time building energy and emission data from Amigo's existing APIs with public environmental data, the chatbot produces professionally formatted reports tailored to each facility's location and operations.
+Chatbot AI Agent ESG là một plugin được hỗ trợ bởi AI cho nền tảng quản lý năng lượng Amigo, tự động tạo ra các báo cáo ESG (Môi trường, Xã hội, Quản trị) toàn diện và tuân thủ các tiêu chuẩn. Bằng cách kết hợp dữ liệu năng lượng và phát thải của tòa nhà theo thời gian thực từ các API hiện có của Amigo với dữ liệu môi trường công khai, chatbot tạo ra các báo cáo được định dạng chuyên nghiệp phù hợp với vị trí và hoạt động của từng cơ sở.
 
-**Primary Problem:** Companies, particularly SMEs, struggle with time-consuming manual ESG report creation. Many lack specialized ESG personnel and face reports that take anywhere from hours to months to complete. Those attempting DIY reports often fail to meet proper standards, while outsourcing to consultants incurs prohibitive costs.
+**Vấn Đề Chính:** Các công ty, đặc biệt là các doanh nghiệp vừa và nhỏ (SMEs), gặp khó khăn với việc tạo báo cáo ESG thủ công mất nhiều thời gian. Nhiều công ty thiếu nhân sự chuyên về ESG và phải đối mặt với các báo cáo mất từ vài giờ đến vài tháng để hoàn thành. Những công ty cố gắng tự làm báo cáo thường không đáp ứng được các tiêu chuẩn phù hợp, trong khi thuê ngoài các tư vấn viên lại tốn kém chi phí cao.
 
-**Target Market:** Global reach across all company sizes and industries using the Amigo platform, with particular focus on SMEs lacking specialized ESG personnel.
-
-**Key Value Proposition:** Extends Amigo's energy/emission management capabilities with automated, standards-compliant ESG report generation. Users can select their preferred ESG framework (GRI, SASB, TCFD, CDP, ISO 14001, etc.) and receive professionally formatted reports without needing specialized ESG expertise. The solution transforms a months-long, expensive process into an hours-long, affordable automated workflow.
+**Giá Trị Cốt Lõi:** Mở rộng khả năng quản lý năng lượng/phát thải của Amigo với tính năng tạo báo cáo ESG tự động và tuân thủ tiêu chuẩn. Người dùng có thể chọn khung ESG ưa thích của họ (GRI, SASB, TCFD, CDP, ISO 14001, v.v.) và nhận được các báo cáo được định dạng chuyên nghiệp mà không cần chuyên môn ESG chuyên sâu. Giải pháp này chuyển đổi một quy trình mất hàng tháng và tốn kém thành một quy trình tự động chỉ mất vài giờ và giá cả phải chăng.
 
 ---
 
-## Problem Statement
+## Vấn Đề
 
-### Current State
+### Tình Trạng Hiện Tại
 
-Amigo users currently create ESG reports through a manual, labor-intensive process:
-- Staff members view energy and emission data in the Amigo UI
-- Data is manually transcribed into report documents (typically Excel or Word)
-- This work is performed by personnel who often lack specialized ESG expertise
-- The process varies wildly in duration based on company experience and resources
+Người dùng Amigo hiện tại tạo báo cáo ESG thông qua một quy trình thủ công, tốn nhiều công sức:
 
-### Pain Points
+- Nhân viên xem dữ liệu năng lượng và phát thải trong giao diện Amigo
+- Dữ liệu được chép tay vào các tài liệu báo cáo (thường là Excel hoặc Word)
+- Công việc này được thực hiện bởi nhân viên thường thiếu chuyên môn ESG chuyên sâu
+- Quy trình này thay đổi rất nhiều về thời lượng tùy thuộc vào kinh nghiệm và nguồn lực của công ty
 
-**Extremely Time-Consuming:**
-Manual ESG report creation takes anywhere from a few hours for experienced teams to several months for companies new to ESG reporting. This unpredictable time investment creates significant resource planning challenges.
+### Pain Points Chính
 
-**High Outsourcing Costs:**
-SMEs and companies without in-house ESG expertise must hire expensive external consultants to produce quality reports, making ESG compliance financially burdensome.
+**Cực Kỳ Tốn Thời Gian:**
+Việc tạo báo cáo ESG thủ công mất từ vài giờ đối với các nhóm có kinh nghiệm đến vài tháng đối với các công ty mới làm quen với báo cáo ESG. Khoản đầu tư thời gian không thể dự đoán này tạo ra những thách thức đáng kể trong việc lập kế hoạch nguồn lực.
 
-**Variable Frequency Demands:**
-Companies need ESG reports at different frequencies—monthly, quarterly, annually, or multi-year periods—making the manual burden unpredictable and scaling difficult.
+**Chi Phí Thuê Ngoài Cao:**
+Các SMEs và các công ty không có chuyên môn ESG nội bộ phải thuê các tư vấn viên bên ngoài đắt đỏ để tạo ra các báo cáo chất lượng, khiến cho việc tuân thủ ESG trở nên gánh nặng về tài chính.
 
-**Inconsistent Quality:**
-Reports vary significantly in completeness, formatting, and adherence to ESG standards. Many companies attempt to create reports but produce outputs that fall short of professional standards and regulatory requirements.
+**Nhu Cầu Tần Suất Thay Đổi:**
+Các công ty cần báo cáo ESG với các tần suất khác nhau—hàng tháng, hàng quý, hàng năm, hoặc nhiều năm—khiến gánh nặng thủ công trở nên không thể dự đoán và khó mở rộng.
 
-**Data Coverage & Context Issues:**
-Staff struggle to:
-- Ensure complete data coverage across all required metrics
-- Incorporate industry benchmarks and comparative data
-- Include location-specific environmental factors and regulations
-- Provide proper narrative context and analysis beyond raw numbers
+**Chất Lượng Không Nhất Quán:**
+Các báo cáo thay đổi đáng kể về mức độ đầy đủ, định dạng và tuân thủ các tiêu chuẩn ESG. Nhiều công ty cố gắng tạo báo cáo nhưng tạo ra các kết quả không đạt tiêu chuẩn chuyên nghiệp và yêu cầu quy định.
 
-### Impact
+**Vấn Đề Về Phạm Vi Dữ Liệu & Bối Cảnh:**
+Nhân viên gặp khó khăn trong việc:
 
-Companies face a significant resource drain and financial burden to meet growing customer and investor demands for professional ESG reporting. The complexity and cost create barriers to entry, preventing many potential Amigo users from accessing ESG reporting capabilities and limiting their ability to compete for business opportunities requiring ESG credentials.
+- Đảm bảo phạm vi dữ liệu đầy đủ trên tất cả các chỉ số yêu cầu
+- Kết hợp các điểm chuẩn ngành và dữ liệu so sánh
+- Bao gồm các yếu tố môi trường và quy định cụ thể theo vị trí
+- Cung cấp bối cảnh tường thuật phù hợp và phân tích ngoài các con số thô
 
-### Urgency
+### Tác Động
 
-The need for this solution is driven by:
-- **Rising stakeholder expectations:** Customers and investors increasingly demand ESG transparency and professional reporting
-- **Market opportunity:** Companies that can efficiently deliver quality ESG reports gain competitive advantages
-- **Amigo value proposition:** Adding comprehensive ESG capabilities positions Amigo as a complete energy-to-reporting solution, attracting new customers and retaining existing ones
+Các công ty phải đối mặt với sự tiêu hao nguồn lực đáng kể và gánh nặng tài chính để đáp ứng nhu cầu ngày càng tăng từ khách hàng và nhà đầu tư về báo cáo ESG chuyên nghiệp. Sự phức tạp và chi phí tạo ra rào cản gia nhập, ngăn cản nhiều người dùng Amigo tiềm năng tiếp cận khả năng báo cáo ESG và hạn chế khả năng cạnh tranh của họ cho các cơ hội kinh doanh yêu cầu thông tin xác thực ESG.
 
----
+### Tính Cấp Thiết
 
-## Proposed Solution
+Nhu cầu cho giải pháp này được thúc đẩy bởi:
 
-### Core Concept
-
-An AI-powered chatbot plugin that integrates seamlessly with Amigo's existing APIs to automatically generate professional, standards-compliant ESG reports. The chatbot employs a hybrid interaction model combining quick-start forms with conversational guidance, making it accessible to users with varying levels of ESG expertise.
-
-### Key Capabilities
-
-**1. Multi-Standard Report Generation**
-- Support for all major ESG frameworks: GRI, SASB, TCFD, CDP, ISO 14001, and regional standards
-- User-selectable standards with framework-specific templates
-- Automatic report structuring per selected standard
-- Built-in compliance verification
-
-**2. Automated Data Integration**
-- Seamless connection to Amigo's existing APIs
-- Pull energy consumption data by building and device
-- Extract emission data with building-level aggregates
-- Support flexible date ranges (monthly, quarterly, annual, multi-year)
-- Handle multiple buildings/facilities within single organization
-
-**3. AI-Powered Enrichment**
-
-*Data Enrichment:*
-- Incorporate local weather data for energy usage context
-- Apply regional emission factors for accurate carbon calculations
-- Add location-specific environmental context
-
-*Regulatory Compliance:*
-- Integrate local ESG regulations and disclosure requirements
-- Ensure jurisdiction-specific compliance
-
-*Benchmarking:*
-- Compare performance against industry standards
-- Reference sustainability best practices
-- Provide context for performance metrics
-
-*Narrative Generation:*
-- Create analytical commentary and insights beyond raw numbers
-- Generate executive summaries and key findings
-- Produce contextual explanations of performance trends
-
-*Compliance Checking:*
-- Verify all required disclosures are included per selected standard
-- Flag missing data points or incomplete sections
-- Validate data completeness and quality
-
-*Intelligent Recommendations:*
-- Suggest improvement areas based on performance analysis
-- Highlight relevant sustainability best practices
-- Identify opportunities for enhanced performance
-
-**4. Intelligent Report Customization**
-- Adapt to various reporting frequencies (monthly, quarterly, annual, multi-year)
-- Accommodate company-specific needs and contexts
-- Scale from single building to multi-facility portfolios
-
-**5. Multiple Output Formats**
-- PDF (primary format—professional, shareable)
-- Word/DOCX (editable format for customization)
-- Markdown (for technical users, version control, web publishing)
-
-### Why This Will Succeed
-
-**Eliminates Expertise Barrier:**
-No ESG specialists required—the AI embeds framework knowledge and best practices, making professional reporting accessible to all users.
-
-**Dramatic Time Reduction:**
-Transforms a process taking months or days into one taking hours, freeing staff for strategic work rather than manual data compilation.
-
-**Cost-Effective:**
-Replaces expensive consultants (often costing thousands to tens of thousands of dollars) with automated AI-powered generation included with the Amigo platform.
-
-**Standards-Compliant:**
-Built-in knowledge of major ESG frameworks ensures reports meet professional and regulatory standards without requiring user expertise.
-
-**Contextually Rich:**
-Combines internal Amigo operational data with external environmental intelligence, delivering reports that are both data-driven and contextually meaningful.
-
-**Seamless Integration:**
-Plugin architecture leverages existing Amigo investment, requiring no separate platform or duplicate data entry.
-
-**Hybrid Interaction Model:**
-Accommodates both quick-start users (via forms) and those needing guidance (via conversational AI), serving diverse user sophistication levels.
+- **Kỳ vọng của các bên liên quan ngày càng tăng:** Khách hàng và nhà đầu tư ngày càng yêu cầu tính minh bạch ESG và báo cáo chuyên nghiệp
+- **Cơ hội thị trường:** Các công ty có thể cung cấp báo cáo ESG chất lượng một cách hiệu quả sẽ có lợi thế cạnh tranh
+- **Giá trị đề xuất của Amigo:** Thêm khả năng ESG toàn diện giúp Amigo trở thành giải pháp hoàn chỉnh từ năng lượng đến báo cáo, thu hút khách hàng mới và giữ chân khách hàng hiện tại
 
 ---
 
-## Target Users
+## Giải Pháp Đề Xuất
 
-### Primary User Segments
+### Khái Niệm Cốt Lõi
 
-The ESG AI Agent Chatbot serves three distinct primary personas across the spectrum of company sizes and ESG maturity. All three are equally important for MVP success.
+Một AI agent chatbot plugin được hỗ trợ bởi AI tích hợp liền mạch với các API hiện có của Amigo để tự động tạo ra các báo cáo ESG chuyên nghiệp và tuân thủ tiêu chuẩn. Chatbot sử dụng mô hình tương tác kết hợp giữa biểu mẫu khởi động nhanh với hướng dẫn đàm thoại, giúp người dùng với các mức độ chuyên môn ESG khác nhau có thể dễ dàng tiếp cận.
 
-### Secondary Users/Stakeholders
+### Khả Năng Chính
 
-#### Report Reviewers
-- **Role:** C-suite executives, Board members, Legal counsel
-- **Use Case:** Review and approve ESG reports before publication
-- **Needs:** Clear, professional reports with executive summaries; ability to request adjustments or clarifications from the chatbot
+**1. Tạo Báo Cáo Đa Tiêu Chuẩn**
 
-#### External Auditors
-- **Role:** Third-party ESG auditors, verification bodies
-- **Use Case:** Verify accuracy and completeness of ESG claims
-- **Needs:** Access to underlying data sources, methodology transparency, audit trails showing data provenance
+- Hỗ trợ tất cả các khung ESG chính: GRI, SASB, TCFD, CDP, ISO 14001, và các tiêu chuẩn khu vực
+- Lựa chọn tiêu chuẩn do người dùng chọn với các mẫu cụ thể cho từng khung
+- Cấu trúc báo cáo tự động theo tiêu chuẩn đã chọn
+- Xác minh tuân thủ tích hợp
 
-#### Report Consumers
-- **Role:** Customers, investors, regulatory bodies, general public
-- **Use Case:** Read and evaluate company ESG performance
-- **Needs:** Standards-compliant, comprehensive reports that meet their evaluation criteria and enable meaningful comparisons
+**2. Tích Hợp Dữ Liệu Tự Động**
+
+- Kết nối liền mạch với các API hiện có của Amigo
+- Trích xuất dữ liệu tiêu thụ năng lượng theo tòa nhà và thiết bị
+- Trích xuất dữ liệu phát thải với tổng hợp cấp tòa nhà
+- Hỗ trợ phạm vi ngày linh hoạt (hàng tháng, hàng quý, hàng năm, nhiều năm)
+- Xử lý nhiều tòa nhà/cơ sở trong một tổ chức
+
+**3. Làm Giàu Bằng AI**
+
+_Làm Giàu Dữ Liệu:_
+
+- Kết hợp dữ liệu thời tiết địa phương cho bối cảnh sử dụng năng lượng
+- Áp dụng các hệ số phát thải khu vực để tính toán carbon chính xác
+- Thêm bối cảnh môi trường cụ thể theo vị trí
+
+_Tuân Thủ Quy Định:_
+
+- Tích hợp các quy định ESG địa phương và yêu cầu công bố
+- Đảm bảo tuân thủ cụ thể theo khu vực pháp lý
+
+_Đánh Giá So Sánh:_
+
+- So sánh hiệu suất với các tiêu chuẩn ngành
+- Tham khảo các thực hành bền vững tốt nhất
+- Cung cấp bối cảnh cho các chỉ số hiệu suất
+
+_Tạo Nội Dung Tường Thuật:_
+
+- Tạo bình luận và thông tin chi tiết phân tích ngoài các con số thô
+- Tạo tóm tắt điều hành và các phát hiện chính
+- Tạo ra các giải thích theo ngữ cảnh về xu hướng hiệu suất
+
+_Kiểm Tra Tuân Thủ:_
+
+- Xác minh tất cả các công bố yêu cầu được bao gồm theo tiêu chuẩn đã chọn
+- Đánh dấu các điểm dữ liệu bị thiếu hoặc các phần không đầy đủ
+- Xác thực tính đầy đủ và chất lượng dữ liệu
+
+_Khuyến Nghị Thông Minh:_
+
+- Đề xuất các lĩnh vực cải thiện dựa trên phân tích hiệu suất
+- Làm nổi bật các thực hành bền vững có liên quan
+- Xác định cơ hội để nâng cao hiệu suất
+
+**4. Tùy Chỉnh Báo Cáo Thông Minh**
+
+- Thích ứng với các tần suất báo cáo khác nhau (hàng tháng, hàng quý, hàng năm, nhiều năm)
+- Phù hợp với nhu cầu và bối cảnh cụ thể của công ty
+- Mở rộng từ một tòa nhà đến danh mục nhiều cơ sở
+
+**5. Nhiều Định Dạng Xuất**
+
+- PDF (định dạng chính—chuyên nghiệp, có thể chia sẻ)
+- Word/DOCX (định dạng có thể chỉnh sửa để tùy chỉnh)
+- Markdown (cho người dùng kỹ thuật, kiểm soát phiên bản, xuất bản web)
+
+### Tại Sao Điều Này Sẽ Thành Công
+
+**Loại Bỏ Rào Cản Chuyên Môn:**
+Không cần chuyên gia ESG—AI nhúng kiến thức về khung và các thực hành tốt nhất, giúp báo cáo chuyên nghiệp có thể tiếp cận được với tất cả người dùng.
+
+**Giảm Thời Gian Đáng Kể:**
+Chuyển đổi một quy trình mất hàng tháng hoặc ngày thành một quy trình chỉ mất vài giờ, giải phóng nhân viên cho công việc chiến lược thay vì biên soạn dữ liệu thủ công.
+
+**Hiệu Quả Chi Phí:**
+Thay thế các tư vấn viên đắt đỏ (thường tốn hàng nghìn đến hàng chục nghìn đô la) bằng việc tạo tự động được hỗ trợ bởi AI đi kèm với nền tảng Amigo.
+
+**Tuân Thủ Tiêu Chuẩn:**
+Kiến thức tích hợp về các khung ESG chính đảm bảo các báo cáo đáp ứng các tiêu chuẩn chuyên nghiệp và quy định mà không cần chuyên môn của người dùng.
+
+**Phong Phú Về Ngữ Cảnh:**
+Kết hợp dữ liệu vận hành nội bộ của Amigo với thông tin tình báo môi trường bên ngoài, cung cấp các báo cáo vừa dựa trên dữ liệu vừa có ý nghĩa về ngữ cảnh.
+
+**Tích Hợp Liền Mạch:**
+Kiến trúc plugin tận dụng đầu tư Amigo hiện có, không yêu cầu nền tảng riêng biệt hoặc nhập dữ liệu trùng lặp.
+
+**Mô Hình Tương Tác Kết Hợp:**
+Phù hợp với cả người dùng khởi động nhanh (qua biểu mẫu) và những người cần hướng dẫn (qua AI đàm thoại), phục vụ các mức độ tinh vi khác nhau của người dùng.
 
 ---
 
-## Goals & Success Metrics
+## Người Dùng Mục Tiêu
 
-### User Success Metrics
+### Phân Khúc Người Dùng Chính
 
-**1. Time Savings**
-- **Metric:** Reduce report creation time from months/days to hours
-- **Target:** 90%+ reduction in time spent on ESG report creation
-- **Measurement:** User surveys, time-tracking comparison before/after adoption
+Chatbot AI Agent ESG phục vụ ba nhân vật chính khác nhau trên phổ quy mô công ty và mức độ trưởng thành về ESG. Cả ba đều quan trọng như nhau cho sự thành công của MVP.
 
-**2. Cost Savings**
-- **Metric:** Reduce ESG reporting costs significantly compared to consultant fees
-- **Target:** 70-90% cost reduction vs. outsourcing
-- **Measurement:** Cost comparison analysis, ROI calculations
+### Người Dùng/Bên Liên Quan Thứ Cấp
 
-**3. Adoption Rate**
-- **Metric:** Percentage of Amigo users generating at least 1 ESG report within first period after launch
-- **Target:** TBD based on user base size and adoption goals
-- **Measurement:** User analytics, report generation tracking
+#### Người Đánh Giá Báo Cáo
 
-**4. Report Quality**
-- **Metric:** Percentage of generated reports meeting compliance standards without manual editing
-- **Target:** High compliance rate indicating professional-quality output
-- **Measurement:** Compliance audit results, user feedback on report usability
+- **Vai Trò:** Giám đốc điều hành cấp cao, thành viên Hội đồng quản trị, Cố vấn pháp lý
+- **Trường Hợp Sử Dụng:** Đánh giá và phê duyệt báo cáo ESG trước khi xuất bản
+- **Nhu Cầu:** Báo cáo rõ ràng, chuyên nghiệp với tóm tắt điều hành; khả năng yêu cầu điều chỉnh hoặc làm rõ từ chatbot
 
-**5. User Satisfaction**
-- **Metric:** NPS score or satisfaction rating indicating users would recommend to others
-- **Target:** Strong positive satisfaction scores
-- **Measurement:** User surveys, NPS tracking, feedback collection
+#### Kiểm Toán Viên Bên Ngoài
 
-### Key Performance Indicators (KPIs)
+- **Vai Trò:** Kiểm toán viên ESG bên thứ ba, cơ quan xác minh
+- **Trường Hợp Sử Dụng:** Xác minh tính chính xác và đầy đủ của các tuyên bố ESG
+- **Nhu Cầu:** Truy cập các nguồn dữ liệu cơ bản, tính minh bạch về phương pháp, dấu vết kiểm toán cho thấy nguồn gốc dữ liệu
 
-The following metrics will be tracked regularly to measure system health and user engagement:
+#### Người Tiêu Thụ Báo Cáo
 
-- **Reports Generated Per Month:** Volume indicator showing adoption and usage
-- **Active Users (Monthly):** Number of unique users generating reports each month
-- **Time-to-First-Report:** How quickly new users generate their first report after access
-- **Report Completion Rate:** Percentage of started reports that are completed
-- **User Retention:** Percentage of users generating repeat reports
-- **Feature Usage Analytics:** Which ESG standards are selected, which AI capabilities are most used
-- **Support Tickets Per Report:** Indicator of system usability and pain points
+- **Vai Trò:** Khách hàng, nhà đầu tư, cơ quan quản lý, công chúng
+- **Trường Hợp Sử Dụng:** Đọc và đánh giá hiệu suất ESG của công ty
+- **Nhu Cầu:** Báo cáo tuân thủ tiêu chuẩn, toàn diện đáp ứng tiêu chí đánh giá của họ và cho phép so sánh có ý nghĩa
 
 ---
 
-## MVP Scope
+## Mục Tiêu & Chỉ Số Thành Công
 
-### Core Features (Must Have for MVP)
+### Chỉ Số Thành Công Của Người Dùng
 
-#### 1. Chatbot Interface & Interaction
-- **Hybrid interaction model:** Quick-start form for experienced users + conversational guidance for those needing help
-- **Parameter collection:** Guide users through report parameters (building selection, time period, ESG standard)
-- **Natural language conversation:** Support questions, clarifications, and adjustments
-- **Intuitive UX:** Accessible to users with varying ESG expertise levels (from novice to expert)
-- **Progress tracking:** Show users where they are in the report generation process
+**1. Tiết Kiệm Thời Gian**
 
-#### 2. Amigo API Integration
-- **Energy consumption data:** Pull comprehensive energy data by building
-- **Emission data:** Extract emission metrics by device and building aggregates
-- **Flexible date ranges:** Support monthly, quarterly, annual, and multi-year periods
-- **Multi-facility support:** Handle multiple buildings/facilities within single organization
-- **Data validation:** Verify data completeness and quality from Amigo
+- **Chỉ Số:** Giảm thời gian tạo báo cáo từ hàng tháng/ngày xuống còn vài giờ
+- **Mục Tiêu:** Giảm 90%+ thời gian dành cho việc tạo báo cáo ESG
+- **Đo Lường:** Khảo sát người dùng, so sánh theo dõi thời gian trước/sau khi áp dụng
 
-#### 3. Comprehensive ESG Standards Support
-Support for all major ESG reporting frameworks:
-- **GRI** (Global Reporting Initiative)
-- **SASB** (Sustainability Accounting Standards Board)
-- **TCFD** (Task Force on Climate-related Financial Disclosures)
-- **CDP** (Carbon Disclosure Project)
-- **ISO 14001** (Environmental Management)
-- **Regional Standards** (EU CSRD, etc.)
+**2. Tiết Kiệm Chi Phí**
 
-Each standard includes:
-- Proper framework templates
-- Required disclosure sections
-- Standard-specific formatting
-- Compliance validation
+- **Chỉ Số:** Giảm chi phí báo cáo ESG đáng kể so với phí tư vấn
+- **Mục Tiêu:** Giảm chi phí 70-90% so với thuê ngoài
+- **Đo Lường:** Phân tích so sánh chi phí, tính toán ROI
 
-#### 4. AI-Powered Report Generation
+**3. Tỷ Lệ Chấp Nhận**
 
-**Structure & Population:**
-- Auto-generate complete report structure per selected ESG standard
-- Populate quantitative data from Amigo APIs
-- Organize data into framework-required sections
+- **Chỉ Số:** Tỷ lệ phần trăm người dùng Amigo tạo ít nhất 1 báo cáo ESG trong kỳ đầu tiên sau khi ra mắt
+- **Mục Tiêu:** Được xác định dựa trên quy mô cơ sở người dùng và mục tiêu chấp nhận
+- **Đo Lường:** Phân tích người dùng, theo dõi tạo báo cáo
 
-**Narrative Generation:**
-- Create AI-driven analytical insights and commentary
-- Generate executive summaries highlighting key findings
-- Provide contextual explanations of performance metrics
-- Develop recommendations based on performance analysis
+**4. Chất Lượng Báo Cáo**
 
-**Content Quality:**
-- Professional tone and language appropriate for stakeholder consumption
-- Clear, accurate explanations suitable for non-technical audiences
-- Actionable insights and improvement suggestions
+- **Chỉ Số:** Tỷ lệ phần trăm báo cáo được tạo đáp ứng các tiêu chuẩn tuân thủ mà không cần chỉnh sửa thủ công
+- **Mục Tiêu:** Tỷ lệ tuân thủ cao cho thấy đầu ra chất lượng chuyên nghiệp
+- **Đo Lường:** Kết quả kiểm toán tuân thủ, phản hồi người dùng về khả năng sử dụng báo cáo
 
-#### 5. Public Data Integration
+**5. Sự Hài Lòng Của Người Dùng**
 
-**Regional Emission Factors:**
-- Accurate carbon calculations based on local energy grid composition
-- Updated emission factors by region/country
+- **Chỉ Số:** Điểm NPS hoặc đánh giá mức độ hài lòng cho thấy người dùng sẽ giới thiệu cho người khác
+- **Mục Tiêu:** Điểm hài lòng tích cực mạnh mẽ
+- **Đo Lường:** Khảo sát người dùng, theo dõi NPS, thu thập phản hồi
 
-**Local Environmental Regulations:**
-- Jurisdiction-specific compliance requirements
-- Required disclosures based on location
+### Các Chỉ Số Hiệu Suất Chính (KPIs)
 
-**Industry Benchmarks:**
-- Comparative performance data by industry sector
-- Context for evaluating performance (what's "good" vs. "needs improvement")
+Các chỉ số sau sẽ được theo dõi thường xuyên để đo lường sức khỏe hệ thống và sự tham gia của người dùng:
 
-**Sustainability Best Practices:**
-- Relevant best practices for user's industry and building type
-- Recommendations aligned with leading sustainability standards
+- **Số Báo Cáo Được Tạo Mỗi Tháng:** Chỉ số khối lượng cho thấy sự chấp nhận và sử dụng
+- **Người Dùng Hoạt Động (Hàng Tháng):** Số lượng người dùng duy nhất tạo báo cáo mỗi tháng
+- **Thời Gian Đến Báo Cáo Đầu Tiên:** Người dùng mới tạo báo cáo đầu tiên nhanh như thế nào sau khi có quyền truy cập
+- **Tỷ Lệ Hoàn Thành Báo Cáo:** Tỷ lệ phần trăm báo cáo bắt đầu được hoàn thành
+- **Giữ Chân Người Dùng:** Tỷ lệ phần trăm người dùng tạo báo cáo lặp lại
+- **Phân Tích Sử Dụng Tính Năng:** Tiêu chuẩn ESG nào được chọn, khả năng AI nào được sử dụng nhiều nhất
+- **Ticket Hỗ Trợ Trên Mỗi Báo Cáo:** Chỉ số về khả năng sử dụng hệ thống và các điểm đau
 
-**Location-Specific Environmental Context:**
-- Basic weather data for contextualizing energy usage
-- Local environmental conditions affecting building performance
+---
 
-#### 6. Report Output Formats
+## Phạm Vi MVP
 
-**PDF (Primary Format):**
-- Professional formatting suitable for stakeholder distribution
-- Embedded charts, tables, and graphics
-- Shareable, non-editable final version
+### Tính Năng Cốt Lõi (Bắt Buộc Có Cho MVP)
 
-**Word/DOCX (Editable Format):**
-- Allows user customization and additions
-- Maintains formatting for easy editing
-- Supports collaborative review processes
+#### 1. Giao Diện & Tương Tác Chatbot
+
+- **Mô hình tương tác kết hợp:** Biểu mẫu khởi động nhanh cho người dùng có kinh nghiệm + hướng dẫn đàm thoại cho những người cần trợ giúp
+- **Thu thập tham số:** Hướng dẫn người dùng qua các tham số báo cáo (chọn tòa nhà, khoảng thời gian, tiêu chuẩn ESG)
+- **Hội thoại ngôn ngữ tự nhiên:** Hỗ trợ câu hỏi, làm rõ và điều chỉnh
+- **UX trực quan:** Có thể tiếp cận với người dùng có các mức độ chuyên môn ESG khác nhau (từ người mới đến chuyên gia)
+- **Theo dõi tiến độ:** Hiển thị cho người dùng vị trí họ đang ở trong quy trình tạo báo cáo
+
+#### 2. Tích Hợp API Amigo
+
+- **Dữ liệu tiêu thụ năng lượng:** Trích xuất dữ liệu năng lượng toàn diện theo tòa nhà
+- **Dữ liệu phát thải:** Trích xuất các chỉ số phát thải theo thiết bị và tổng hợp tòa nhà
+- **Phạm vi ngày linh hoạt:** Hỗ trợ các kỳ hàng tháng, hàng quý, hàng năm và nhiều năm
+- **Hỗ trợ nhiều cơ sở:** Xử lý nhiều tòa nhà/cơ sở trong một tổ chức
+- **Xác thực dữ liệu:** Xác minh tính đầy đủ và chất lượng dữ liệu từ Amigo
+
+#### 3. Hỗ Trợ Tiêu Chuẩn ESG Toàn Diện
+
+Hỗ trợ tất cả các khung báo cáo ESG chính:
+
+- **GRI** (Sáng kiến Báo cáo Toàn cầu)
+- **SASB** (Hội đồng Tiêu chuẩn Kế toán Bền vững)
+- **TCFD** (Lực lượng Đặc nhiệm về Công bố liên quan đến Khí hậu)
+- **CDP** (Dự án Công bố Carbon)
+- **ISO 14001** (Quản lý Môi trường)
+- **Tiêu Chuẩn Khu Vực** (EU CSRD, v.v.)
+
+Mỗi tiêu chuẩn bao gồm:
+
+- Mẫu khung phù hợp
+- Các phần công bố yêu cầu
+- Định dạng cụ thể theo tiêu chuẩn
+- Xác thực tuân thủ
+
+#### 4. Tạo Báo Cáo Được Hỗ Trợ Bởi AI
+
+**Cấu Trúc & Điền Dữ Liệu:**
+
+- Tự động tạo cấu trúc báo cáo hoàn chỉnh theo tiêu chuẩn ESG đã chọn
+- Điền dữ liệu định lượng từ API Amigo
+- Sắp xếp dữ liệu vào các phần yêu cầu của khung
+
+**Tạo Nội Dung Tường Thuật:**
+
+- Tạo thông tin chi tiết phân tích và bình luận do AI điều khiển
+- Tạo tóm tắt điều hành làm nổi bật các phát hiện chính
+- Cung cấp giải thích theo ngữ cảnh về các chỉ số hiệu suất
+- Phát triển các khuyến nghị dựa trên phân tích hiệu suất
+
+**Chất Lượng Nội Dung:**
+
+- Giọng điệu và ngôn ngữ chuyên nghiệp phù hợp cho các bên liên quan
+- Giải thích rõ ràng, chính xác phù hợp với đối tượng phi kỹ thuật
+- Thông tin chi tiết và đề xuất cải thiện có thể thực hiện
+
+#### 5. Tích Hợp Dữ Liệu Công Khai
+
+**Hệ Số Phát Thải Khu Vực:**
+
+- Tính toán carbon chính xác dựa trên thành phần lưới điện địa phương
+- Cập nhật các hệ số phát thải theo khu vực/quốc gia
+
+**Quy Định Môi Trường Địa Phương:**
+
+- Yêu cầu tuân thủ cụ thể theo khu vực pháp lý
+- Công bố yêu cầu dựa trên vị trí
+
+**Điểm Chuẩn Ngành:**
+
+- Dữ liệu hiệu suất so sánh theo lĩnh vực ngành
+- Bối cảnh để đánh giá hiệu suất ("tốt" vs. "cần cải thiện")
+
+**Thực Hành Bền Vững Tốt Nhất:**
+
+- Các thực hành tốt nhất có liên quan cho ngành và loại tòa nhà của người dùng
+- Khuyến nghị phù hợp với các tiêu chuẩn bền vững hàng đầu
+
+**Bối Cảnh Môi Trường Cụ Thể Theo Vị Trí:**
+
+- Dữ liệu thời tiết cơ bản để tạo ngữ cảnh cho việc sử dụng năng lượng
+- Điều kiện môi trường địa phương ảnh hưởng đến hiệu suất tòa nhà
+
+#### 6. Định Dạng Đầu Ra Báo Cáo
+
+**PDF (Định Dạng Chính):**
+
+- Định dạng chuyên nghiệp phù hợp cho phân phối cho các bên liên quan
+- Biểu đồ, bảng và đồ họa nhúng
+- Phiên bản cuối cùng có thể chia sẻ, không thể chỉnh sửa
+
+**Word/DOCX (Định Dạng Có Thể Chỉnh Sửa):**
+
+- Cho phép người dùng tùy chỉnh và bổ sung
+- Duy trì định dạng để dễ dàng chỉnh sửa
+- Hỗ trợ quy trình đánh giá cộng tác
 
 **Markdown:**
-- Technical users and version control systems
-- Web publishing and documentation systems
-- Plain text editing and transformation
 
-All formats include:
-- Properly formatted sections per ESG standard
-- Required disclosures and data tables
-- Executive summaries and key findings
-- Visual elements (charts, tables) where appropriate
+- Người dùng kỹ thuật và hệ thống kiểm soát phiên bản
+- Xuất bản web và hệ thống tài liệu
+- Chỉnh sửa và chuyển đổi văn bản thuần túy
 
-#### 7. Compliance Checking
+Tất cả các định dạng bao gồm:
 
-**Disclosure Verification:**
-- Verify all required disclosures are present per selected ESG standard
-- Check against framework requirements
+- Các phần được định dạng đúng theo tiêu chuẩn ESG
+- Công bố và bảng dữ liệu yêu cầu
+- Tóm tắt điều hành và các phát hiện chính
+- Các yếu tố trực quan (biểu đồ, bảng) nếu phù hợp
 
-**Data Completeness:**
-- Flag missing data points or incomplete sections
-- Identify data quality issues
+#### 7. Kiểm Tra Tuân Thủ
 
-**Validation Summary:**
-- Provide compliance status overview
-- Highlight areas needing attention
-- Offer guidance for addressing gaps
+**Xác Minh Công Bố:**
 
-#### 8. Intelligent Recommendations
+- Xác minh tất cả các công bố yêu cầu có mặt theo tiêu chuẩn ESG đã chọn
+- Kiểm tra theo yêu cầu của khung
 
-**Performance-Based Suggestions:**
-- Identify improvement areas based on data analysis
-- Highlight underperforming metrics
+**Tính Đầy Đủ Dữ Liệu:**
 
-**Best Practice Alignment:**
-- Suggest sustainability best practices relevant to user's context
-- Connect recommendations to industry standards
+- Đánh dấu các điểm dữ liệu bị thiếu hoặc các phần không đầy đủ
+- Xác định các vấn đề về chất lượng dữ liệu
 
-**Gap Identification:**
-- Point out missing data or reporting elements
-- Guide users toward comprehensive reporting
+**Tóm Tắt Xác Thực:**
+
+- Cung cấp tổng quan về trạng thái tuân thủ
+- Làm nổi bật các lĩnh vực cần chú ý
+- Cung cấp hướng dẫn để giải quyết khoảng trống
+
+#### 8. Khuyến Nghị Thông Minh
+
+**Đề Xuất Dựa Trên Hiệu Suất:**
+
+- Xác định các lĩnh vực cải thiện dựa trên phân tích dữ liệu
+- Làm nổi bật các chỉ số hoạt động kém
+
+**Phù Hợp Với Thực Hành Tốt Nhất:**
+
+- Đề xuất các thực hành bền vững có liên quan đến bối cảnh của người dùng
+- Kết nối các khuyến nghị với các tiêu chuẩn ngành
+
+**Xác Định Khoảng Trống:**
+
+- Chỉ ra dữ liệu hoặc các yếu tố báo cáo còn thiếu
+- Hướng dẫn người dùng hướng tới báo cáo toàn diện

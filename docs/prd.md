@@ -1,246 +1,246 @@
-# ESG AI Agent Chatbot Product Requirements Document (PRD)
+# Tài Liệu Yêu Cầu Sản Phẩm (PRD) Chatbot AI Agent ESG
 
-## Goals and Background Context
+## Mục Tiêu và Bối Cảnh Nền
 
-### Goals
+### Mục Tiêu
 
-- **Automate ESG Report Generation:** Enable Amigo users to generate professional, standards-compliant ESG reports in hours instead of days or months through AI-powered automation
-- **Eliminate Expertise Barrier:** Make ESG reporting accessible to companies of all sizes without requiring specialized ESG personnel or consultants
-- **Ensure Standards Compliance:** Support all major ESG frameworks (GRI, SASB, TCFD, CDP, ISO 14001, regional standards) with built-in compliance verification
-- **Deliver Time and Cost Savings:** Achieve 90%+ reduction in report creation time and 70-90% cost reduction compared to traditional consultant-based approaches
-- **Drive Amigo Adoption:** Position Amigo as a complete energy-to-ESG-reporting solution, attracting new customers and increasing retention
-- **Provide Contextual Intelligence:** Enrich Amigo operational data with public environmental data, industry benchmarks, and location-specific insights
-- **Scale Across User Personas:** Serve sustainability managers, facility operators, and SME executives equally well through intuitive hybrid interaction model
+- **Tự Động Hóa Việc Tạo Báo Cáo ESG:** Cho phép người dùng Amigo tạo báo cáo ESG chuyên nghiệp, tuân thủ tiêu chuẩn trong vài giờ thay vì vài ngày hoặc vài tháng thông qua tự động hóa được hỗ trợ bởi AI
+- **Loại Bỏ Rào Cản Chuyên Môn:** Làm cho báo cáo ESG có thể tiếp cận được với các công ty ở mọi quy mô mà không cần nhân sự chuyên về ESG hoặc tư vấn viên
+- **Đảm Bảo Tuân Thủ Tiêu Chuẩn:** Hỗ trợ tất cả các khung ESG chính (GRI, SASB, TCFD, CDP, ISO 14001, tiêu chuẩn khu vực) với xác minh tuân thủ tích hợp
+- **Mang Lại Tiết Kiệm Thời Gian và Chi Phí:** Đạt được giảm 90%+ thời gian tạo báo cáo và giảm chi phí 70-90% so với cách tiếp cận dựa trên tư vấn truyền thống
+- **Thúc Đẩy Việc Chấp Nhận Amigo:** Định vị Amigo là giải pháp hoàn chỉnh từ năng lượng đến báo cáo ESG, thu hút khách hàng mới và tăng tỷ lệ giữ chân
+- **Cung Cấp Thông Tin Theo Ngữ Cảnh:** Làm phong phú dữ liệu vận hành Amigo bằng dữ liệu môi trường công khai, điểm chuẩn ngành và thông tin chi tiết theo vị trí
+- **Mở Rộng Quy Mô Trên Các Nhân Vật Người Dùng:** Phục vụ các nhà quản lý bền vững, người vận hành cơ sở và giám đốc điều hành SME một cách bình đẳng thông qua mô hình tương tác kết hợp trực quan
 
-### Background Context
+### Bối Cảnh Nền
 
-Amigo is an established energy management platform that provides comprehensive APIs for tracking electricity consumption and emissions data by device and building. While Amigo successfully helps organizations monitor and manage their energy footprint, users face significant challenges when attempting to translate this operational data into formal ESG reports for stakeholders.
+Amigo là một nền tảng quản lý năng lượng đã được thiết lập, cung cấp các API toàn diện để theo dõi tiêu thụ điện và dữ liệu phát thải theo thiết bị và tòa nhà. Trong khi Amigo thành công trong việc giúp các tổ chức giám sát và quản lý dấu chân năng lượng của họ, người dùng phải đối mặt với những thách thức đáng kể khi cố gắng chuyển đổi dữ liệu vận hành này thành báo cáo ESG chính thức cho các bên liên quan.
 
-**The Current Challenge:**
+**Thách Thức Hiện Tại:**
 
-Companies across all sizes struggle with manual ESG report creation. Staff members manually extract data from the Amigo UI and transcribe it into Excel or Word documents—a process that takes anywhere from hours to months depending on company experience and resources. Many lack specialized ESG personnel, leading to reports that fail to meet professional standards or regulatory requirements. SMEs often resort to expensive consultants (costing thousands to tens of thousands of dollars), while others avoid ESG reporting altogether despite growing customer and investor demands.
+Các công ty ở mọi quy mô đang gặp khó khăn với việc tạo báo cáo ESG thủ công. Nhân viên thủ công trích xuất dữ liệu từ giao diện Amigo và chép nó vào tài liệu Excel hoặc Word—một quy trình mất từ vài giờ đến vài tháng tùy thuộc vào kinh nghiệm và nguồn lực của công ty. Nhiều người thiếu nhân sự chuyên về ESG, dẫn đến các báo cáo không đáp ứng tiêu chuẩn chuyên nghiệp hoặc yêu cầu quy định. Các SMEs thường phải sử dụng các tư vấn viên đắt đỏ (tốn hàng nghìn đến hàng chục nghìn đô la), trong khi những người khác tránh báo cáo ESG hoàn toàn mặc dù có nhu cầu ngày càng tăng từ khách hàng và nhà đầu tư.
 
-**The Market Opportunity:**
+**Cơ Hội Thị Trường:**
 
-Rising stakeholder expectations for ESG transparency, combined with increasing regulatory requirements globally, create urgent demand for accessible, affordable ESG reporting solutions. Companies that can efficiently deliver quality ESG reports gain competitive advantages in securing contracts and investment. By adding comprehensive ESG reporting capabilities, Amigo can transform from an energy management platform into a complete sustainability solution, capturing significant market share among SMEs and enterprises seeking end-to-end ESG automation.
+Kỳ vọng ngày càng tăng của các bên liên quan về tính minh bạch ESG, kết hợp với các yêu cầu quy định ngày càng tăng trên toàn cầu, tạo ra nhu cầu cấp thiết cho các giải pháp báo cáo ESG có thể tiếp cận và giá cả phải chăng. Các công ty có thể cung cấp báo cáo ESG chất lượng một cách hiệu quả sẽ có lợi thế cạnh tranh trong việc đảm bảo hợp đồng và đầu tư. Bằng cách thêm khả năng báo cáo ESG toàn diện, Amigo có thể chuyển đổi từ nền tảng quản lý năng lượng thành giải pháp bền vững hoàn chỉnh, nắm bắt thị phần đáng kể giữa các SMEs và doanh nghiệp đang tìm kiếm tự động hóa ESG từ đầu đến cuối.
 
-**The Solution:**
+**Giải Pháp:**
 
-The ESG AI Agent Chatbot is a plugin for Amigo that automatically generates comprehensive, standards-compliant ESG reports by combining real-time building energy and emission data from Amigo's existing APIs with public environmental data. Using a hybrid interaction model (quick-start forms + conversational AI), the chatbot guides users through report generation regardless of their ESG expertise level, producing professional reports in PDF, Word, and Markdown formats that meet framework-specific requirements.
-
----
-
-## Requirements
-
-### Functional Requirements
-
-#### Report Generation & ESG Standards
-
-**FR1:** The system shall support report generation for all major ESG reporting frameworks including GRI (Global Reporting Initiative), SASB (Sustainability Accounting Standards Board), TCFD (Task Force on Climate-related Financial Disclosures), CDP (Carbon Disclosure Project), ISO 14001 (Environmental Management), and regional standards (EU CSRD, etc.).
-
-**FR2:** The system shall allow users to select their preferred ESG standard at the start of report generation via dropdown or conversational selection.
-
-**FR3:** The system shall auto-generate complete report structures specific to the selected ESG framework, including all required sections, disclosure categories, and data tables as defined by that standard.
-
-**FR4:** The system shall verify that all required disclosures for the selected ESG standard are present in the generated report and flag any missing elements.
-
-**FR5:** The system shall validate report completeness against framework requirements and provide a compliance status summary highlighting areas needing attention.
-
-#### Chatbot Interface & Interaction
-
-**FR6:** The system shall provide a hybrid interaction model combining quick-start forms (for experienced users) with conversational AI guidance (for users needing help).
-
-**FR7:** The chatbot shall guide users through essential report parameters including building/facility selection, reporting time period (monthly/quarterly/annual/multi-year), and ESG standard selection.
-
-**FR8:** The chatbot shall support natural language conversation for clarifications, adjustments, and questions during the report generation process.
-
-**FR9:** The system shall display progress tracking showing users where they are in the report generation workflow.
-
-**FR10:** The chatbot shall provide contextual help and explanations suitable for users with varying ESG expertise levels (novice to expert).
-
-**FR11:** The chatbot shall remember conversation context and user preferences within a session to avoid repetitive questions.
-
-#### Amigo API Integration & Data Management
-
-**FR12:** The system shall integrate with Amigo's existing APIs to pull comprehensive energy consumption data by building and device.
-
-**FR13:** The system shall extract emission data by device and building aggregates from Amigo APIs.
-
-**FR14:** The system shall support flexible date range selection including monthly, quarterly, annual, and multi-year reporting periods.
-
-**FR15:** The system shall handle multiple buildings/facilities within a single organization, allowing users to generate individual or consolidated reports.
-
-**FR16:** The system shall validate data completeness and quality from Amigo, flagging missing data points or anomalies.
-
-**FR17:** The system shall authenticate securely with Amigo APIs using the platform's existing authentication mechanism.
-
-#### AI-Powered Report Content Generation
-
-**FR18:** The system shall populate quantitative energy and emission data from Amigo APIs into the appropriate sections of the selected ESG framework template.
-
-**FR19:** The system shall generate AI-driven narrative sections including executive summaries, key findings, analytical insights, and contextual commentary on performance metrics.
-
-**FR20:** The system shall create professional tone and language appropriate for stakeholder consumption (investors, customers, regulators).
-
-**FR21:** The system shall provide clear, accurate explanations suitable for non-technical audiences while maintaining technical accuracy.
-
-**FR22:** The system shall generate actionable recommendations for performance improvement based on data analysis.
-
-**FR23:** The system shall produce executive summaries highlighting key findings and performance highlights/lowlights.
-
-#### Public Data Integration & Enrichment
-
-**FR24:** The system shall integrate regional emission factors for accurate carbon calculations based on local energy grid composition, updated by region/country.
-
-**FR25:** The system shall incorporate local environmental regulations and jurisdiction-specific compliance requirements relevant to the building's location.
-
-**FR26:** The system shall include industry benchmarks and comparative performance data to provide context for evaluating performance (what's "good" vs. "needs improvement").
-
-**FR27:** The system shall reference sustainability best practices relevant to the user's industry and building type.
-
-**FR28:** The system shall incorporate location-specific environmental context including basic weather data for contextualizing energy usage and local environmental conditions affecting building performance.
-
-**FR29:** The system shall automatically refresh public data sources on a regular cadence to ensure current information.
-
-#### Report Output & Export
-
-**FR30:** The system shall generate reports in PDF format with professional formatting suitable for stakeholder distribution, including embedded charts, tables, and graphics.
-
-**FR31:** The system shall generate reports in Word/DOCX format that allows user customization and additions while maintaining formatting for easy editing.
-
-**FR32:** The system shall generate reports in Markdown format for technical users, version control systems, and web publishing.
-
-**FR33:** All output formats shall include properly formatted sections per the selected ESG standard, required disclosures and data tables, executive summaries, key findings, and visual elements (charts, tables) where appropriate.
-
-**FR34:** The system shall allow users to download generated reports immediately upon completion.
-
-**FR35:** The system shall provide report preview capability before final download/export.
-
-#### Intelligent Recommendations & Gap Identification
-
-**FR36:** The system shall identify improvement areas based on performance data analysis and highlight underperforming metrics.
-
-**FR37:** The system shall suggest sustainability best practices relevant to the user's context and connect recommendations to industry standards.
-
-**FR38:** The system shall point out missing data or reporting elements and guide users toward comprehensive reporting.
-
-**FR39:** The system shall provide prioritized recommendations based on impact potential and feasibility.
+Chatbot AI Agent ESG là một plugin cho Amigo tự động tạo báo cáo ESG toàn diện, tuân thủ tiêu chuẩn bằng cách kết hợp dữ liệu năng lượng và phát thải của tòa nhà theo thời gian thực từ các API hiện có của Amigo với dữ liệu môi trường công khai. Sử dụng mô hình tương tác kết hợp (biểu mẫu khởi động nhanh + AI đàm thoại), chatbot hướng dẫn người dùng qua việc tạo báo cáo bất kể mức độ chuyên môn ESG của họ, tạo ra các báo cáo chuyên nghiệp ở định dạng PDF, Word và Markdown đáp ứng các yêu cầu cụ thể theo khung.
 
 ---
 
-## User Interface Design Goals
+## Yêu Cầu
 
-### Overall UX Vision
+### Yêu Cầu Chức Năng
 
-The ESG AI Agent Chatbot interface embodies **approachable expertise**—making complex ESG reporting feel simple and guided while maintaining professional credibility. The experience should feel like having a knowledgeable ESG consultant available 24/7, patiently guiding users through report creation regardless of their background.
+#### Tạo Báo Cáo & Tiêu Chuẩn ESG
 
-**Core UX Principles:**
+**FR1:** Hệ thống sẽ hỗ trợ tạo báo cáo cho tất cả các khung báo cáo ESG chính bao gồm GRI (Sáng kiến Báo cáo Toàn cầu), SASB (Hội đồng Tiêu chuẩn Kế toán Bền vững), TCFD (Lực lượng Đặc nhiệm về Công bố liên quan đến Khí hậu), CDP (Dự án Công bố Carbon), ISO 14001 (Quản lý Môi trường), và các tiêu chuẩn khu vực (EU CSRD, v.v.).
 
-- **Progressive Disclosure:** Start simple (quick-start form), reveal complexity only as needed (conversational depth)
-- **Trust Through Transparency:** Always show users what data is being used and where recommendations come from
-- **Guidance Without Condescension:** Help novices without boring experts; adapt to user sophistication
-- **Clarity in Complexity:** Use plain language for ESG concepts while maintaining technical accuracy
-- **Confidence Building:** Provide validation and positive reinforcement as users progress through report generation
+**FR2:** Hệ thống sẽ cho phép người dùng chọn tiêu chuẩn ESG ưa thích của họ khi bắt đầu tạo báo cáo thông qua menu thả xuống hoặc lựa chọn đàm thoại.
 
-### Key Interaction Paradigms
+**FR3:** Hệ thống sẽ tự động tạo cấu trúc báo cáo hoàn chỉnh cụ thể cho khung ESG đã chọn, bao gồm tất cả các phần yêu cầu, danh mục công bố và bảng dữ liệu như được định nghĩa bởi tiêu chuẩn đó.
 
-**1. Hybrid Entry Model:**
+**FR4:** Hệ thống sẽ xác minh rằng tất cả các công bố yêu cầu cho tiêu chuẩn ESG đã chọn có mặt trong báo cáo được tạo và đánh dấu bất kỳ yếu tố nào bị thiếu.
 
-- **Quick-Start Mode:** Single-page form for experienced users who know exactly what they want (building, period, standard, generate)
-- **Guided Mode:** Conversational flow for users who need help deciding on parameters or understanding options
-- **Seamless Transition:** Users can switch between form and conversation at any time
+**FR5:** Hệ thống sẽ xác thực tính đầy đủ của báo cáo theo yêu cầu của khung và cung cấp tóm tắt trạng thái tuân thủ làm nổi bật các lĩnh vực cần chú ý.
 
-**2. Conversational AI Patterns:**
+#### Giao Diện & Tương Tác Chatbot
 
-- **Clarifying Questions:** Chatbot asks targeted questions when user input is ambiguous or incomplete
-- **Contextual Suggestions:** Based on user's building data and industry, suggest relevant ESG standards and reporting periods
-- **Explain-as-You-Go:** Provide optional explanations for ESG terminology and framework requirements inline
-- **Confirmations:** Recap user selections before generating report ("Just to confirm, you want a GRI report for Building A covering Q3 2025?")
+**FR6:** Hệ thống sẽ cung cấp mô hình tương tác kết hợp kết hợp biểu mẫu khởi động nhanh (cho người dùng có kinh nghiệm) với hướng dẫn AI đàm thoại (cho người dùng cần trợ giúp).
 
-**3. Progress & Status Visibility:**
+**FR7:** Chatbot sẽ hướng dẫn người dùng qua các tham số báo cáo thiết yếu bao gồm lựa chọn tòa nhà/cơ sở, kỳ báo cáo (hàng tháng/hàng quý/hàng năm/nhiều năm), và lựa chọn tiêu chuẩn ESG.
 
-- **Progress Indicator:** Visual progress bar or checklist showing: Parameters Set → Data Retrieved → Report Generated → Ready to Download
-- **Real-Time Updates:** Show users what's happening ("Pulling energy data from Amigo...", "Generating executive summary...", "Applying TCFD framework...")
-- **Time Estimates:** Display estimated time remaining for report generation
+**FR8:** Chatbot sẽ hỗ trợ hội thoại ngôn ngữ tự nhiên cho các làm rõ, điều chỉnh và câu hỏi trong quá trình tạo báo cáo.
 
-**4. Error Recovery & Validation:**
+**FR9:** Hệ thống sẽ hiển thị theo dõi tiến độ cho người dùng thấy họ đang ở đâu trong quy trình tạo báo cáo.
 
-- **Inline Validation:** Immediately validate user inputs (e.g., date ranges, building selection) and provide helpful error messages
-- **Graceful Degradation:** If Amigo data is incomplete, show what's missing and offer to generate partial report or wait for data
-- **Retry & Resume:** Allow users to retry failed operations without losing progress
+**FR10:** Chatbot sẽ cung cấp trợ giúp theo ngữ cảnh và giải thích phù hợp cho người dùng với các mức độ chuyên môn ESG khác nhau (từ người mới đến chuyên gia).
 
-### Core Screens and Views
+**FR11:** Chatbot sẽ ghi nhớ ngữ cảnh hội thoại và tùy chọn người dùng trong một phiên để tránh các câu hỏi lặp lại.
 
-From a product perspective, the most critical screens necessary to deliver the PRD values and goals:
+#### Tích Hợp API Amigo & Quản Lý Dữ Liệu
 
-**1. Landing/Home Screen**
+**FR12:** Hệ thống sẽ tích hợp với các API hiện có của Amigo để trích xuất dữ liệu tiêu thụ năng lượng toàn diện theo tòa nhà và thiết bị.
 
-- Welcome message with brief explanation of ESG chatbot capabilities
-- Two clear entry points: "Quick Start" button and "Guide Me" conversation starter
-- Recent reports list (if returning user) with quick regenerate options
-- Access to help documentation and sample reports
+**FR13:** Hệ thống sẽ trích xuất dữ liệu phát thải theo thiết bị và tổng hợp tòa nhà từ API Amigo.
 
-**2. Report Configuration Screen (Quick-Start Mode)**
+**FR14:** Hệ thống sẽ hỗ trợ lựa chọn phạm vi ngày linh hoạt bao gồm các kỳ báo cáo hàng tháng, hàng quý, hàng năm và nhiều năm.
 
-- Building/Facility Selector (dropdown or search with Amigo building list)
-- Reporting Period Picker (presets: This Month, Last Quarter, This Year, Custom Range)
-- ESG Standard Selector (dropdown with descriptions of each framework)
-- Optional: Industry selection (for better benchmarking)
-- Generate Report button
+**FR15:** Hệ thống sẽ xử lý nhiều tòa nhà/cơ sở trong một tổ chức, cho phép người dùng tạo báo cáo cá nhân hoặc tổng hợp.
 
-**3. Conversational Chatbot Interface (Guided Mode)**
+**FR16:** Hệ thống sẽ xác thực tính đầy đủ và chất lượng dữ liệu từ Amigo, đánh dấu các điểm dữ liệu bị thiếu hoặc bất thường.
 
-- Chat window with conversational AI guiding parameter collection
-- User message input field with typing indicators
-- Suggested response buttons for common answers
-- Side panel showing selected parameters as conversation progresses
-- Ability to edit parameters directly in side panel
-- Generate Report button (appears when all parameters collected)
+**FR17:** Hệ thống sẽ xác thực an toàn với API Amigo bằng cách sử dụng cơ chế xác thực hiện có của nền tảng.
 
-**4. Report Generation Progress Screen**
+#### Tạo Nội Dung Báo Cáo Được Hỗ Trợ Bởi AI
 
-- Progress indicator showing current stage
-- Real-time status messages
-- Estimated time remaining
-- Cancel button (with confirmation)
-- Background generation option (user can navigate away and return)
+**FR18:** Hệ thống sẽ điền dữ liệu năng lượng và phát thải định lượng từ API Amigo vào các phần phù hợp của mẫu khung ESG đã chọn.
 
-**5. Report Preview & Download Screen**
+**FR19:** Hệ thống sẽ tạo các phần tường thuật do AI điều khiển bao gồm tóm tắt điều hành, các phát hiện chính, thông tin chi tiết phân tích và bình luận theo ngữ cảnh về các chỉ số hiệu suất.
 
-- Preview pane showing generated report (PDF/Word/Markdown tabs)
-- Key metrics summary at top (report score, compliance status, missing elements)
-- Download buttons for each format
-- Edit/Regenerate options if user wants to adjust parameters
-- Share options (if applicable)
-- Feedback mechanism (rate this report quality)
+**FR20:** Hệ thống sẽ tạo giọng điệu và ngôn ngữ chuyên nghiệp phù hợp cho các bên liên quan (nhà đầu tư, khách hàng, cơ quan quản lý).
 
-**6. Report Review Screen (Compliance Checking)**
+**FR21:** Hệ thống sẽ cung cấp giải thích rõ ràng, chính xác phù hợp với đối tượng phi kỹ thuật trong khi duy trì độ chính xác kỹ thuật.
 
-- Compliance status overview (e.g., "95% compliant with GRI standards")
-- List of flagged issues or missing disclosures with explanations
-- Recommendations panel with prioritized improvement suggestions
-- Option to accept report as-is or address gaps
-- Regenerate with improvements button
+**FR22:** Hệ thống sẽ tạo các khuyến nghị có thể thực hiện để cải thiện hiệu suất dựa trên phân tích dữ liệu.
 
-**7. Settings & Preferences Screen**
+**FR23:** Hệ thống sẽ tạo tóm tắt điều hành làm nổi bật các phát hiện chính và điểm nổi bật/thấp về hiệu suất.
 
-- Default ESG standard preference
-- Default buildings/facilities for quick access
-- Notification preferences
-- Report template customizations (branding, logo upload)
-- Data source preferences (which public data to include)
+#### Tích Hợp & Làm Giàu Dữ Liệu Công Khai
 
-### Branding
+**FR24:** Hệ thống sẽ tích hợp các hệ số phát thải khu vực để tính toán carbon chính xác dựa trên thành phần lưới điện địa phương, được cập nhật theo khu vực/quốc gia.
 
-**Integration with Amigo Brand:**
+**FR25:** Hệ thống sẽ kết hợp các quy định môi trường địa phương và yêu cầu tuân thủ cụ thể theo khu vực pháp lý có liên quan đến vị trí của tòa nhà.
 
-- Use Amigo's existing color palette and design tokens for visual consistency
-- Chatbot should feel like a natural extension of the Amigo platform, not a separate tool
-- Maintain Amigo's typography, button styles, and UI patterns
-- ESG chatbot branding as "Amigo ESG Reporting" or similar (final naming TBD)
+**FR26:** Hệ thống sẽ bao gồm các điểm chuẩn ngành và dữ liệu hiệu suất so sánh để cung cấp bối cảnh để đánh giá hiệu suất ("tốt" vs. "cần cải thiện").
 
-**Professional Credibility:**
+**FR27:** Hệ thống sẽ tham khảo các thực hành bền vững tốt nhất có liên quan đến ngành và loại tòa nhà của người dùng.
 
-- Visual design should convey trustworthiness and expertise appropriate for ESG reporting
-- Use of sustainability-related color accents (greens, blues) where appropriate
-- Icons and illustrations that communicate environmental responsibility
+**FR28:** Hệ thống sẽ kết hợp bối cảnh môi trường cụ thể theo vị trí bao gồm dữ liệu thời tiết cơ bản để tạo ngữ cảnh cho việc sử dụng năng lượng và điều kiện môi trường địa phương ảnh hưởng đến hiệu suất tòa nhà.
+
+**FR29:** Hệ thống sẽ tự động làm mới các nguồn dữ liệu công khai theo nhịp độ thường xuyên để đảm bảo thông tin hiện tại.
+
+#### Đầu Ra & Xuất Báo Cáo
+
+**FR30:** Hệ thống sẽ tạo báo cáo ở định dạng PDF với định dạng chuyên nghiệp phù hợp cho phân phối cho các bên liên quan, bao gồm biểu đồ, bảng và đồ họa nhúng.
+
+**FR31:** Hệ thống sẽ tạo báo cáo ở định dạng Word/DOCX cho phép người dùng tùy chỉnh và bổ sung trong khi duy trì định dạng để dễ dàng chỉnh sửa.
+
+**FR32:** Hệ thống sẽ tạo báo cáo ở định dạng Markdown cho người dùng kỹ thuật, hệ thống kiểm soát phiên bản và xuất bản web.
+
+**FR33:** Tất cả các định dạng đầu ra sẽ bao gồm các phần được định dạng đúng theo tiêu chuẩn ESG đã chọn, công bố và bảng dữ liệu yêu cầu, tóm tắt điều hành, các phát hiện chính và các yếu tố trực quan (biểu đồ, bảng) nếu phù hợp.
+
+**FR34:** Hệ thống sẽ cho phép người dùng tải xuống các báo cáo được tạo ngay sau khi hoàn thành.
+
+**FR35:** Hệ thống sẽ cung cấp khả năng xem trước báo cáo trước khi tải xuống/xuất cuối cùng.
+
+#### Khuyến Nghị Thông Minh & Xác Định Khoảng Trống
+
+**FR36:** Hệ thống sẽ xác định các lĩnh vực cải thiện dựa trên phân tích dữ liệu hiệu suất và làm nổi bật các chỉ số hoạt động kém.
+
+**FR37:** Hệ thống sẽ đề xuất các thực hành bền vững tốt nhất có liên quan đến bối cảnh của người dùng và kết nối các khuyến nghị với các tiêu chuẩn ngành.
+
+**FR38:** Hệ thống sẽ chỉ ra dữ liệu hoặc các yếu tố báo cáo còn thiếu và hướng dẫn người dùng hướng tới báo cáo toàn diện.
+
+**FR39:** Hệ thống sẽ cung cấp các khuyến nghị được ưu tiên dựa trên tiềm năng tác động và tính khả thi.
+
+---
+
+## Mục Tiêu Thiết Kế Giao Diện Người Dùng
+
+### Tầm Nhìn UX Tổng Thể
+
+Giao diện Chatbot AI Agent ESG thể hiện **chuyên môn dễ tiếp cận**—làm cho báo cáo ESG phức tạp trở nên đơn giản và có hướng dẫn trong khi duy trì độ tin cậy chuyên nghiệp. Trải nghiệm nên giống như có một tư vấn viên ESG am hiểu có sẵn 24/7, kiên nhẫn hướng dẫn người dùng qua việc tạo báo cáo bất kể nền tảng của họ.
+
+**Nguyên Tắc UX Cốt Lõi:**
+
+- **Tiết Lộ Dần:** Bắt đầu đơn giản (biểu mẫu khởi động nhanh), chỉ tiết lộ độ phức tạp khi cần thiết (độ sâu đàm thoại)
+- **Tin Tưởng Thông Qua Tính Minh Bạch:** Luôn cho người dùng thấy dữ liệu nào đang được sử dụng và các khuyến nghị đến từ đâu
+- **Hướng Dẫn Không Hạ Thấp:** Giúp người mới mà không làm chuyên gia chán; thích nghi với sự tinh vi của người dùng
+- **Rõ Ràng Trong Sự Phức Tạp:** Sử dụng ngôn ngữ đơn giản cho các khái niệm ESG trong khi duy trì độ chính xác kỹ thuật
+- **Xây Dựng Tự Tin:** Cung cấp xác thực và khuyến khích tích cực khi người dùng tiến triển qua việc tạo báo cáo
+
+### Các Mô Hình Tương Tác Chính
+
+**1. Mô Hình Nhập Kết Hợp:**
+
+- **Chế Độ Khởi Động Nhanh:** Biểu mẫu một trang cho người dùng có kinh nghiệm biết chính xác họ muốn gì (tòa nhà, kỳ, tiêu chuẩn, tạo)
+- **Chế Độ Có Hướng Dẫn:** Luồng đàm thoại cho người dùng cần trợ giúp quyết định về tham số hoặc hiểu các tùy chọn
+- **Chuyển Đổi Liền Mạch:** Người dùng có thể chuyển đổi giữa biểu mẫu và đàm thoại bất cứ lúc nào
+
+**2. Các Mẫu AI Đàm Thoại:**
+
+- **Câu Hỏi Làm Rõ:** Chatbot đặt các câu hỏi có mục tiêu khi đầu vào của người dùng mơ hồ hoặc không đầy đủ
+- **Đề Xuất Theo Ngữ Cảnh:** Dựa trên dữ liệu tòa nhà và ngành của người dùng, đề xuất các tiêu chuẩn ESG và kỳ báo cáo có liên quan
+- **Giải Thích Khi Bạn Đi:** Cung cấp giải thích tùy chọn cho thuật ngữ ESG và yêu cầu khung nội tuyến
+- **Xác Nhận:** Tóm tắt lại lựa chọn của người dùng trước khi tạo báo cáo ("Chỉ để xác nhận, bạn muốn báo cáo GRI cho Tòa nhà A bao gồm Q3 2025?")
+
+**3. Tầm Nhìn Tiến Độ & Trạng Thái:**
+
+- **Chỉ Báo Tiến Độ:** Thanh tiến độ trực quan hoặc danh sách kiểm tra cho thấy: Tham Số Đã Đặt → Dữ Liệu Đã Truy Xuất → Báo Cáo Đã Tạo → Sẵn Sàng Tải Xuống
+- **Cập Nhật Thời Gian Thực:** Cho người dùng thấy những gì đang xảy ra ("Đang trích xuất dữ liệu năng lượng từ Amigo...", "Đang tạo tóm tắt điều hành...", "Đang áp dụng khung TCFD...")
+- **Ước Tính Thời Gian:** Hiển thị thời gian ước tính còn lại để tạo báo cáo
+
+**4. Phục Hồi Lỗi & Xác Thực:**
+
+- **Xác Thực Nội Tuyến:** Ngay lập tức xác thực đầu vào của người dùng (ví dụ: phạm vi ngày, lựa chọn tòa nhà) và cung cấp thông báo lỗi hữu ích
+- **Giảm Nhẹ Duyên Dáng:** Nếu dữ liệu Amigo không đầy đủ, hiển thị những gì còn thiếu và đề nghị tạo báo cáo một phần hoặc đợi dữ liệu
+- **Thử Lại & Tiếp Tục:** Cho phép người dùng thử lại các hoạt động thất bại mà không mất tiến độ
+
+### Các Màn Hình và Chế Độ Xem Cốt Lõi
+
+Từ góc độ sản phẩm, các màn hình quan trọng nhất cần thiết để cung cấp giá trị và mục tiêu của PRD:
+
+**1. Màn Hình Đích/Trang Chủ**
+
+- Thông điệp chào mừng với giải thích ngắn gọn về khả năng chatbot ESG
+- Hai điểm nhập rõ ràng: nút "Khởi Động Nhanh" và công cụ khởi động đàm thoại "Hướng Dẫn Tôi"
+- Danh sách báo cáo gần đây (nếu là người dùng quay lại) với các tùy chọn tạo lại nhanh
+- Truy cập tài liệu trợ giúp và báo cáo mẫu
+
+**2. Màn Hình Cấu Hình Báo Cáo (Chế Độ Khởi Động Nhanh)**
+
+- Bộ Chọn Tòa Nhà/Cơ Sở (menu thả xuống hoặc tìm kiếm với danh sách tòa nhà Amigo)
+- Bộ Chọn Kỳ Báo Cáo (cài đặt sẵn: Tháng Này, Quý Trước, Năm Này, Phạm Vi Tùy Chỉnh)
+- Bộ Chọn Tiêu Chuẩn ESG (menu thả xuống với mô tả của mỗi khung)
+- Tùy chọn: Lựa chọn ngành (để đánh giá tốt hơn)
+- Nút Tạo Báo Cáo
+
+**3. Giao Diện Chatbot Đàm Thoại (Chế Độ Có Hướng Dẫn)**
+
+- Cửa sổ trò chuyện với AI đàm thoại hướng dẫn thu thập tham số
+- Trường nhập tin nhắn người dùng với các chỉ báo gõ
+- Nút phản hồi được đề xuất cho các câu trả lời phổ biến
+- Bảng điều khiển bên hiển thị các tham số đã chọn khi đàm thoại tiến triển
+- Khả năng chỉnh sửa tham số trực tiếp trong bảng điều khiển bên
+- Nút Tạo Báo Cáo (xuất hiện khi tất cả tham số được thu thập)
+
+**4. Màn Hình Tiến Độ Tạo Báo Cáo**
+
+- Chỉ báo tiến độ cho thấy giai đoạn hiện tại
+- Thông báo trạng thái thời gian thực
+- Thời gian ước tính còn lại
+- Nút Hủy (có xác nhận)
+- Tùy chọn tạo nền (người dùng có thể điều hướng đi và quay lại)
+
+**5. Màn Hình Xem Trước & Tải Xuống Báo Cáo**
+
+- Khung xem trước hiển thị báo cáo được tạo (các tab PDF/Word/Markdown)
+- Tóm tắt các chỉ số chính ở trên cùng (điểm báo cáo, trạng thái tuân thủ, yếu tố còn thiếu)
+- Nút tải xuống cho mỗi định dạng
+- Tùy chọn Chỉnh sửa/Tạo lại nếu người dùng muốn điều chỉnh tham số
+- Tùy chọn chia sẻ (nếu có)
+- Cơ chế phản hồi (đánh giá chất lượng báo cáo này)
+
+**6. Màn Hình Đánh Giá Báo Cáo (Kiểm Tra Tuân Thủ)**
+
+- Tổng quan trạng thái tuân thủ (ví dụ: "95% tuân thủ với tiêu chuẩn GRI")
+- Danh sách các vấn đề được đánh dấu hoặc công bố còn thiếu với giải thích
+- Bảng điều khiển khuyến nghị với các đề xuất cải thiện được ưu tiên
+- Tùy chọn chấp nhận báo cáo như hiện tại hoặc giải quyết khoảng trống
+- Nút Tạo lại với các cải tiến
+
+**7. Màn Hình Cài Đặt & Tùy Chọn**
+
+- Tùy chọn tiêu chuẩn ESG mặc định
+- Tòa nhà/cơ sở mặc định để truy cập nhanh
+- Tùy chọn thông báo
+- Tùy chỉnh mẫu báo cáo (thương hiệu, tải lên logo)
+- Tùy chọn nguồn dữ liệu (dữ liệu công khai nào để bao gồm)
+
+### Thương Hiệu
+
+**Tích Hợp Với Thương Hiệu Amigo:**
+
+- Sử dụng bảng màu hiện có và các token thiết kế của Amigo cho sự nhất quán về hình ảnh
+- Chatbot nên cảm thấy như một phần mở rộng tự nhiên của nền tảng Amigo, không phải một công cụ riêng biệt
+- Duy trì kiểu chữ, kiểu nút và các mẫu UI của Amigo
+- Thương hiệu chatbot ESG là "Amigo ESG Reporting" hoặc tương tự (tên cuối cùng TBD)
+
+**Độ Tin Cậy Chuyên Nghiệp:**
+
+- Thiết kế hình ảnh nên truyền tải sự đáng tin cậy và chuyên môn phù hợp cho báo cáo ESG
+- Sử dụng các điểm nhấn màu liên quan đến tính bền vững (màu xanh lá cây, xanh dương) khi phù hợp
+- Biểu tượng và hình minh họa truyền đạt trách nhiệm môi trường
